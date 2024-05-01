@@ -1,3 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fea9b1;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #fea9b1 30%, #fe7da0 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Pacifico", cursive;
+}
+
+a {
+  text-decoration: none;
+}

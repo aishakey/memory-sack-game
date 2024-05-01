@@ -7,10 +7,28 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "custom-heading": ["Pacifico", "sans-serif"],
+        "custom-paragraph": ["Raleway", "sans-serif"],
+      },
+      colors: {
+        "main-beige": "#FFF7E4",
+        "main-pink": "#FE6D89",
+        "dark-pink": "#E93460",
+        "main-dark": "#363636",
+      },
+      borderWidth: {
+        8: "8px",
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-countries":
+          "linear-gradient(to bottom right, #FECD50 34%, #F78D2E 100%)",
+        "gradient-fruits":
+          "linear-gradient(to bottom right, #7BFDF8 34%, #1872EC 100%)",
+        "gradient-animals":
+          "linear-gradient(to bottom right, #99CF46 34%, #0A673A 100%)",
+        "gradient-states":
+          "linear-gradient(to bottom right, #FFA9B0 34%, #C6275F 100%)",
       },
     },
   },
