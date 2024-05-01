@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="flex justify-between items-center px-4 sm:px-12 py-4">
+      <nav className="flex z-10 justify-between items-center px-4 sm:px-12 py-4">
         <Link href="/">
           <Image
             src="/logo.svg"

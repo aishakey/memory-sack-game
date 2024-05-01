@@ -1,7 +1,12 @@
-import React from "react";
+"use client";
 
-const Game = () => {
-  return <div>Game</div>;
-};
+import { useSearchParams } from "next/navigation";
 
-export default Game;
+function GamePage() {
+  const searchParams = useSearchParams();
+  const category = searchParams.get("game");
+
+  return <div className="game-container"></div>;
+}
+
+export default GamePage;
