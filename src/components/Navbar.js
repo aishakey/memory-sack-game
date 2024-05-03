@@ -59,7 +59,7 @@ function Navbar() {
                   Choose Your Category:
                 </span>{" "}
                 Select from a variety of topics like Countries, Animals, Fruits
-                & Veggies, and U.S States.
+                & Veggies, and Sports.
               </li>
               <li className="pb-2">
                 <span className="text-main-pink font-semibold">

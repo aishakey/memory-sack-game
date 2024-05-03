@@ -27,7 +27,7 @@ module.exports = {
           "linear-gradient(to bottom right, #7BFDF8 34%, #1872EC 100%)",
         "gradient-animals":
           "linear-gradient(to bottom right, #99CF46 34%, #0A673A 100%)",
-        "gradient-states":
+        "gradient-sports":
           "linear-gradient(to bottom right, #FFA9B0 34%, #C6275F 100%)",
       },
     },

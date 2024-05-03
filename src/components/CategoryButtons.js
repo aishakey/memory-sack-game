@@ -26,7 +26,7 @@ function CategoryButtons() {
           <span className="mt-1 text-main-dark font-medium">Countries</span>
         </div>
         <div className="flex flex-col items-center">
-          <Link href="/game/fruits-vegetables" passHref>
+          <Link href="/game/fruits" passHref>
             <div
               className="bg-gradient-fruits p-6 rounded-lg flex items-center justify-center cursor-pointer group"
               style={{ width: "140px", height: "70px" }}
@@ -62,21 +62,21 @@ function CategoryButtons() {
           <span className="mt-1 text-main-dark font-medium">Animals</span>
         </div>
         <div className="flex flex-col items-center">
-          <Link href="/game/us-states" passHref>
+          <Link href="/game/sports" passHref>
             <div
-              className="bg-gradient-states p-6 rounded-lg flex items-center justify-center cursor-pointer group"
+              className="bg-gradient-sports p-6 rounded-lg flex items-center justify-center cursor-pointer group"
               style={{ width: "140px", height: "70px" }}
             >
               <Image
-                src="/star.svg"
-                alt="Star"
-                width={70}
-                height={70}
+                src="/ball.svg"
+                alt="Ball"
+                width={60}
+                height={60}
                 className="transition-transform duration-300 ease-in-out group-hover:-translate-y-4"
               />
             </div>
           </Link>
-          <span className="mt-1 text-main-dark font-medium">U.S. States</span>
+          <span className="mt-1 text-main-dark font-medium">Sports</span>
         </div>
       </div>
     </div>
