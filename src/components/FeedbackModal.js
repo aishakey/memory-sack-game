@@ -1,7 +1,5 @@
-function FeedbackModal({ visible, message, onClose }) {
+function FeedbackModal({ visible, message, onClose, roundsCompleted }) {
   if (!visible) return null;
-
-  // hide button when over
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -9,12 +7,19 @@ function FeedbackModal({ visible, message, onClose }) {
         <h2 className="text-xl sm:text-3xl mb-4 sm:mb-8 text-center">
           {message}
         </h2>
-        <button
-          onClick={onClose}
-          className="bg-dark-pink text-main-beige font-semibold rounded-lg px-12 py-2 hover:bg-[#fd5675]"
-        >
-          Next Round
-        </button>
+        {message.startsWith("You are correct") ? (
+          <button
+            onClick={onClose}
+            className="bg-dark-pink text-main-beige font-semibold rounded-lg px-12 py-2 hover:bg-[#fd5675]"
+          >
+            Next Round
+          </button>
+        ) : (
+          <p className="text-center mt-2 text-dark-pink font-semibold sm:text-xl">
+            Rounds Completed:{" "}
+            <span className="text-main-dark">{roundsCompleted}</span>
+          </p>
+        )}
       </div>
     </div>
   );

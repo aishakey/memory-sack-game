@@ -56,13 +56,6 @@ function GamePage() {
     }
   }, [wordIndex, currentWords]);
 
-  const handleNextRound = () => {
-    setShowFeedbackModal(false);
-    if (feedbackMessage.startsWith("You are")) {
-      setCurrentRound(currentRound + 1);
-    }
-  };
-
   const handleSelectWord = (word) => {
     const newRemaining = remainingWords.filter((w) => w !== word);
     const newSelected = [...selectedWords, word];
@@ -100,19 +93,19 @@ function GamePage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center -mt-24">
+    <div className="flex flex-col items-center justify-center -mt-8 sm:-mt-24">
       {showStartModal && <StartModal onStart={startGame} />}
       {showFeedbackModal && (
         <FeedbackModal
           visible={showFeedbackModal}
           message={feedbackMessage}
-          // onClose={handleNextRound}
           onClose={() => {
             setShowFeedbackModal(false);
             if (feedbackMessage.startsWith("You are correct")) {
               setCurrentRound(currentRound + 1);
             }
           }}
+          roundsCompleted={currentRound - 1}
         />
       )}
 
@@ -131,14 +124,14 @@ function GamePage() {
 
       {/* Answer Frame */}
       <div
-        className="w-full -mt-4 max-w-3xl border-b-4 border-main-beige bg-[#FA9FB0] pb-2 -pt-2 mb-5 overflow-x-auto flex gap-2"
+        className="w-11/12 sm:w-full -mt-4 max-w-3xl border-b-4 border-main-beige bg-[#FA9FB0] pb-2 -pt-2 mb-5 overflow-x-auto flex gap-2"
         style={{ height: "50px" }}
       >
         {selectedWords.map((word, index) => (
           <button
             key={index}
             onClick={() => handleDeselectWord(word)}
-            className="bg-main-beige text-sm border-2 border-main-pink rounded-lg px-4 py-2 shadow-md"
+            className="bg-main-beige text-sm border-2 border-main-pink rounded-lg px-2 sm:px-4 py-2 shadow-md"
             style={{ height: "40px", lineHeight: "20px" }}
           >
             {word}
@@ -147,16 +140,15 @@ function GamePage() {
       </div>
 
       {/* Words Frame */}
-      {/* spacing between rows */}
       <div
-        className="w-full text-main-dark max-w-3xl bg-[#FFB3BF] border-4 border-main-beige rounded-lg p-5 flex flex-wrap justify-start items-start gap-2"
+        className="w-11/12 sm:w-full text-main-dark max-w-3xl bg-[#FFB3BF] border-4 border-main-beige rounded-lg p-3 sm:p-5 flex flex-wrap justify-start items-start gap-2"
         style={{ height: "240px", overflowY: "auto" }}
       >
         {remainingWords.map((word, index) => (
           <button
             key={index}
             onClick={() => handleSelectWord(word)}
-            className="bg-main-beige text-sm border-2 border-main-pink rounded-lg px-4 py-2 shadow-md"
+            className="bg-main-beige text-sm border-2 border-main-pink rounded-lg px-2 sm:px-4 py-2 shadow-md"
             style={{ height: "40px", lineHeight: "20px" }}
           >
             {word}
@@ -167,7 +159,12 @@ function GamePage() {
       {/* Confirm Button */}
       <button
         onClick={confirmSequence}
-        className="bg-dark-pink text-main-beige rounded-lg font-semibold w-full max-w-3xl py-2 mt-4 hover:bg-[#fd5675]"
+        className={`bg-dark-pink mb-4 text-main-beige rounded-lg font-semibold w-11/12 sm:w-full max-w-3xl py-2 mt-4 ${
+          selectedWords.length > 0
+            ? "hover:bg-[#fd5675]"
+            : "opacity-50 cursor-not-allowed"
+        }`}
+        disabled={selectedWords.length === 0}
       >
         Confirm
       </button>

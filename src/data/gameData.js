@@ -106,7 +106,7 @@ export const gameData = {
     "Badminton",
     "Swimming",
     "Boxing",
-    "Ping Pong",
+    "Bowling",
     "Skiing",
     "Fishing",
     "Cricket",

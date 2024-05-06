@@ -38,7 +38,7 @@ function Navbar() {
       </nav>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
           <div className="bg-main-beige text-main-dark text-sm sm:text-base px-8 py-6 rounded-lg border-main-pink border-8 max-w-md sm:max-w-lg mx-auto">
             <h2 className="text-xl font-bold mb-4 text-center">
               Welcome to Memory Sack!
