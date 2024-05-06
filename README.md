@@ -26,7 +26,7 @@ Memory Sack is a captivating memory game designed to challenge users to sharpen 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/aishakey/memorysack.git
+   git clone https://github.com/aishakey/memory-sack-game
    cd memory-sack
    ```
 2. Install the dependencies:
