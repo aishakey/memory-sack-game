@@ -36,6 +36,9 @@ npm install
 # or
 yarn install
 ```
+## Project Link
+
+Check out the live project [here](https://memory-sack-game.vercel.app/).
 
 3. Run:
 
